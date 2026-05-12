@@ -13,6 +13,7 @@ public interface Evaluable {
     double getPromedio();
     boolean estaAprobada();
     
+    
     default void mostrar_EstadoAcademico() {
         System.out.println("Condicion: " + getCondicion());
         System.out.println("Promedio: " + getPromedio());
