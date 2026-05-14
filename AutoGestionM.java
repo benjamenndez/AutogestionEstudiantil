@@ -83,6 +83,21 @@ public class AutoGestionM {
         System.out.println("Materia no encontrada.");
     }
 }
+    public static void mostrarReportes() {
+
+    System.out.println("\n--- REPORTES ---");
+
+    System.out.println("Cantidad de materias: " + materias.size());
+
+    int totalEstudiantes = 0;
+
+    for(Materia m : materias) {
+
+        totalEstudiantes += m.getCantidadEstudiantes();
+    }
+
+    System.out.println("Total de estudiantes: " + totalEstudiantes);
+}
     public static void main(String[] args) {
         int opcion;
 
@@ -94,6 +109,7 @@ public class AutoGestionM {
             System.out.println("3. Inscribir estudiante");
             System.out.println("4. Mostrar estudiantes");
             System.out.println("5. Eliminar estudiante");
+            System.out.println("6. Reportes");
             System.out.println("0. Salir");
 
             opcion = sc.nextInt();
@@ -117,6 +133,9 @@ public class AutoGestionM {
                      break;
                      case 5:
                      eliminarEstudiante();
+                     break;
+                     case 6:
+                     mostrarReportes();
                      break;
 
                 case 0:
