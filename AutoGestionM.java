@@ -103,7 +103,9 @@ public class AutoGestionM {
 
         do {
 
-            System.out.println("\n--- SISTEMA ---");
+            System.out.println("======================");
+            System.out.println(" SISTEMA ACADEMICO ");
+            System.out.println("======================");
             System.out.println("1. Crear materia");
             System.out.println("2. Mostrar materias");
             System.out.println("3. Inscribir estudiante");
@@ -151,18 +153,26 @@ public class AutoGestionM {
 
     public static void crearMateria() {
 
-        System.out.print("Nombre de la materia: ");
-        String nombre = sc.nextLine();
+    System.out.print("Nombre de la materia: ");
+    String nombre = sc.nextLine();
 
-        System.out.print("Codigo: ");
-        int codigo = sc.nextInt();
+    System.out.print("Codigo: ");
+    int codigo = sc.nextInt();
 
-        Materia m = new Materia(nombre, codigo);
+    Materia existente = buscarMateria(codigo);
 
-        materias.add(m);
+    if(existente != null) {
 
-        System.out.println("Materia creada.");
+        System.out.println("Ya existe una materia con ese codigo.");
+        return;
     }
+
+    Materia m = new Materia(nombre, codigo);
+
+    materias.add(m);
+
+    System.out.println("Materia creada.");
+}
 
     public static void mostrarMaterias() {
 
